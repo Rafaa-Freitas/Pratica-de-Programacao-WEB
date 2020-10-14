@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP2 - WEB</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font: normal 20pt Arial;
+            text-align: center;
+        }
+        h1{
+            color: rgba(36,255,182);
+            text-shadow: 1px 1px 1px black;
+        }
+        p{
+           color: #FF6E4A;
+           text-shadow: 1px 1px 1px black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>AP2 - Prática de Programação em Sistemas WEB.</h1> 
+    <p>Exercício 09</p>
+    <script>
+        var soma = 0;
+            do{
+               var cod = Number(window.prompt("Digite o código do produto: "));
+                switch(cod){
+                    case 100: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 1.70*quant; break;
+                    case 101: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 2.30*quant; break;
+                    case 102: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 2.60*quant; break;
+                    case 103: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 2.40*quant; break;
+                    case 104: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 2.50*quant; break;
+                    case 105: 
+                        var quant = Number(window.prompt("Digite a quantidade: "));
+                        soma += 1.00*quant; break;
+                }          
+            }while(cod!=0);
+            soma = soma.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        document.write(`O programa foi finalizado.<br>O valor total do pedido é de ${soma}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP2 - WEB</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font: normal 20pt Arial;
+            text-align: center;
+        }
+        h1{
+            color: rgba(36,255,182);
+            text-shadow: 1px 1px 1px black;
+        }
+        p{
+           color: #FF6E4A;
+           text-shadow: 1px 1px 1px black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>AP2 - Prática de Programação em Sistemas WEB.</h1> 
+    <p>Exercício 03</p>
+    <script>
+        var a = Number(window.prompt("Digite um valor inteiro: ")); 
+        var b = Number(window.prompt("Digite outro valor inteiro: "));
+        var c = 0;
+        if(a==b){
+            c = (a+b);
+        } else{
+            c = (a*b);
+        }
+        document.write(`O resultado atribuído a variável C é ${c}`);
+    </script>
+</body>
+</html>

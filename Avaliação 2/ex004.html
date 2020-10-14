@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP2 - WEB</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            font: normal 20pt Arial;
+            text-align: center;
+        }
+        h1{
+            color: rgba(36,255,182);
+            text-shadow: 1px 1px 1px black;
+        }
+        p{
+           color: #FF6E4A;
+           text-shadow: 1px 1px 1px black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>AP2 - Prática de Programação em Sistemas WEB.</h1> 
+    <p>Exercício 04</p>
+    <script>
+        var valor = Number(window.prompt("Digite o preço à vista? "));
+        var valor3x = valor*1.1;
+        var valor5x = valor*1.2;
+        parcela3x = valor3x/3;
+        parcela5x = valor5x/5;
+        valor = valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        valor3x = valor3x.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        valor5x = valor5x.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        parcela3x = parcela3x.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        parcela5x = parcela5x.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+        var quant = Number(window.prompt("Quantidade de parcelas (1, 3 ou 5)?"));
+        if(quant==1){
+            document.write(`O total a ser pago é de ${valor} e deverá ser pago à vista.`);
+        } else if (quant == 3){
+            
+            document.write(`O total a ser pago é de ${valor3x} e deverá ser pago em 3 parcelas de ${parcela3x}.`);
+        } else if (quant == 5) {
+            
+            document.write(`O total a ser pago é de ${valor5x} e deverá ser pago em 5 parcelas de ${parcela5x}`);
+        } else {
+            document.write("O número de parcelas informado está incorreto, tente novamente recarregando a página.");
+        }
+    </script>
+</body>
+</html>
