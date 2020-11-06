@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>QUIZ | PRATICAS WEB</title>
+  <link rel="stylesheet" href="_css/normalize.css">
+  <link rel="stylesheet" href="_css/reset.css">
+  <link rel="stylesheet" href="_css/grid.css">
+  <link rel="stylesheet" href="_css/style.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <p class="grid-16">QUIZ | Práticas WEB</p>
+    </div>
+  </header>
+
+  <section class="container">
+    <div id="quiz" class="grid-16 quiz">
+      <!--Imagem do Quiz -->
+      <img id="imagem" src="_img/quiz-img.jpg" alt="Imagem Quiz">
+
+      <!-- perguntas -->
+      <p id="pergunta"></p>
+
+      <!-- respostas -->
+      <ul>
+        <li id="resp1" onclick="resultado()"></li>
+        <li id="resp2" onclick="resultado()"></li>
+        <li id="resp3" onclick="resultado()"></li>
+        <li id="resp4" onclick="resultado()"></li>
+      </ul>
+
+      <!-- botões -->
+      <div class="botoes">
+        <button class="nxtbtn" onclick="proximaPergunta()">
+          <p>Próximo</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script language="javascript" src="_js/quiz.js"></script>
+
+</body>
+
+</html>

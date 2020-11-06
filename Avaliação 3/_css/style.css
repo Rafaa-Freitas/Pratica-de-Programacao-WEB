@@ -1,0 +1,100 @@
+/* Import de fonte para o projeto */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Estilos Gerais */
+body {
+  background-color: #000026;
+}
+
+p {
+  font-family: "Rubik", sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #07f0af;
+  height: 100px;
+  padding-top: 12px;
+}
+
+header p {
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 8px #000026;
+  text-align: center;
+}
+
+/* Section */
+
+.quiz {
+  clear: both;
+  background-color: #fff;
+  margin-top: 100px;
+  border: 4px #07f0af solid;
+  border-radius: 10px;
+}
+
+.quiz img {
+  width: 100%;
+}
+
+.quiz p {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin: 0 100px 0 100px;
+}
+
+.quiz ul {
+  font-family: "Rubik", sans-serif;
+  margin-left: 100px;
+  font-size: 1em;
+  margin-right: 100px;
+}
+
+.quiz ul li {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.quiz ul li:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* Botões */
+.botoes {
+  margin: 10px auto;
+}
+
+button.nxtbtn {
+  margin-left: 100px;
+}
+.botoes button {
+  background-color: #07f0af;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.botoes button:hover {
+  cursor: pointer;
+}
+
+.quiz button p {
+  margin: 0px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* Estilos para JS */
+
+.acerto {
+  background-color: #07f0af;
+}
+
+.erro {
+  background-color: #ff0000;
+}
