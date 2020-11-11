@@ -19,7 +19,21 @@
   </header>
 
   <section class="container">
-    <div id="quiz" class="grid-16 quiz">
+    <div id="inicio" class="grid-16 quiz">
+      <!--Imagem do Quiz -->
+      <img src="_img/quiz-img.jpg" alt="Imagem Quiz">
+
+      <p>Bem vindo ao QUIZ, para iniciar aperta o botão abaixo</p>
+      <!-- botões -->
+      <div class="botoes">
+        <button class="nxtbtn iniciarbtn" onclick="proximaPergunta()">
+          <p>INICIAR</p>
+        </button>
+      </div>
+    </div>
+
+
+    <div id="quiz" class="grid-16 quiz inativa">
       <!--Imagem do Quiz -->
       <img id="imagem" src="_img/quiz-img.jpg" alt="Imagem Quiz">
 
@@ -28,11 +42,14 @@
 
       <!-- respostas -->
       <ul>
-        <li id="resp1" onclick="resultado()"></li>
-        <li id="resp2" onclick="resultado()"></li>
-        <li id="resp3" onclick="resultado()"></li>
-        <li id="resp4" onclick="resultado()"></li>
+        <li id="resp1" onclick="verificaResposta(0)"></li>
+        <li id="resp2" onclick="verificaResposta(1)"></li>
+        <li id="resp3" onclick="verificaResposta(2)"></li>
+        <li id="resp4" onclick="verificaResposta(3)"></li>
       </ul>
+
+
+      <p id="perguntaAtualTexto">x</p>
 
       <!-- botões -->
       <div class="botoes">
@@ -40,6 +57,17 @@
           <p>Próximo</p>
         </button>
       </div>
+    </div>
+
+    <div id="result" class="grid-16 quiz inativa">
+
+      <!--Imagem do Quiz -->
+      <img id="imagem" src="_img/quiz-img.jpg" alt="Imagem Quiz">
+
+      <!-- resultado -->
+      <p id="resultado_final">Você não selecionou nada, recarregue a página.</p>
+      <p id="mensagem_final"></p>
+
     </div>
   </section>
 

@@ -96,35 +96,112 @@ var p = [   // Array de Pergunta
       2: "C - 12:00",
       3: "D - 6:02",
     },
-    resposta: 2
+    resposta: 0
   },
 ];
  
-var tela = window.document.getElementById("quiz");
+var inicio = window.document.getElementById("inicio");  // TELA INICIAL
+var tela = window.document.getElementById("quiz"); // TELA DO QUIZ
+var tela_final = window.document.getElementById("result"); // TELA FINAL COM RESULTADOS
+var perguntaAtualTexto = window.document.getElementById("perguntaAtualTexto"); // PEGANDO O TEXTO
 var perguntas = window.document.getElementById("pergunta"); // VARIÁVEL DE PERGUNTAS
 var alternativa = []; // ARRAY DE ALTERNATIVAS
+var resultado_final = window.document.getElementById("resultado_final"); // VARIÁVEL PARA TEXTO DE RESULTADO FINAL.
+var mensagem_final = window.document.getElementById("mensagem_final");
 
 alternativa[0] = window.document.getElementById("resp1");
 alternativa[1] = window.document.getElementById("resp2");
 alternativa[2] = window.document.getElementById("resp3");
 alternativa[3] = window.document.getElementById("resp4");
 
-pergunta.innerText = p[0].pergunta;
-alternativa[0].innerText = p[0].alternativas[0];
-alternativa[1].innerText = p[0].alternativas[1];
-alternativa[2].innerText = p[0].alternativas[2];
-alternativa[3].innerText = p[0].alternativas[3];
 
 
-var n = 1 // Variável para guardar e acrescentar valores ao índice do array que está sendo chamado
+
+var n = 0 // Variável para guardar e acrescentar valores ao índice do array que está sendo chamado
 
 function proximaPergunta(){ // Botão Próximo Executando a função de trocar perguntas e respostas de acordo com o índice do Array p
-  if(n<=9){
+
+  limparAlternativa();
+
+  if (n === 0) {
+
+    inicio.classList.toggle("inativa");
+    tela.classList.toggle("inativa");
+
+
+  pergunta.innerText = p[0].pergunta;
+  alternativa[0].innerText = p[0].alternativas[0];
+  alternativa[1].innerText = p[0].alternativas[1];
+  alternativa[2].innerText = p[0].alternativas[2];
+  alternativa[3].innerText = p[0].alternativas[3];
+
+
+  } else if(n<=9 && n > 0) {
+
   pergunta.innerText = p[n].pergunta;
   alternativa[0].innerText = p[n].alternativas[0];
   alternativa[1].innerText = p[n].alternativas[1];
   alternativa[2].innerText = p[n].alternativas[2];
   alternativa[3].innerText = p[n].alternativas[3];
+
+}else {
+  tela.classList.toggle("inativa");
+  tela_final.classList.toggle("inativa");
+}
+
+  var perguntaAtual = n;
+
+  perguntaAtualTexto.innerText = perguntaAtual;
+
   n++;
+
+  console.log('Indice atual: '+ perguntaAtual);
+  console.log(`Pergunta atual: ${perguntaAtual + 1}`);
+
 }
+
+var acertos = a;
+var a = 0;
+function verificaResposta(alternativaClicada) {
+  let perguntaAtual;
+  // PEGANDO RESULTADO A PARTIR DO BOTAO DA ALTERNATIVA
+  let alternativaSelecionada;
+  alternativaSelecionada = alternativaClicada;
+  // FIM PEGANDO RESULTADO.
+
+//  VERIFICANDO SE ALTERNATIVA SELECIONADA É IGUAL A RESPOSTA
+
+   perguntaAtual = perguntaAtualTexto.innerText; // PEGANDO TEXTO DA VARIAVEL ESCONDIDA
+
+  // Se a alternativa clicada for igual a resposta da pergunta atual, faça:
+  if (alternativaSelecionada === p[perguntaAtual].resposta) {
+
+    alternativa[alternativaSelecionada].classList.toggle("acerto");
+    a++;
+    acertos = a;
+
+  } else {
+
+    // INDICE DA ALTERNATIVA = RESPOSTA DA PERGUNTA ATUAL, DENTRO DO ARRAY DE PERGUNTAS.
+    alternativa[p[perguntaAtual].resposta].classList.toggle("acerto");
+    alternativa[alternativaSelecionada].classList.toggle("erro");
+  }
+  resultado_final.innerText = `Sua pontuação é: ${acertos}/10`
+  mensagem_final.innerText = "Obrigado por realizar o QUIZ, caso queira refazê-lo recarregue a página"
 }
+
+
+function limparAlternativa() {
+
+  alternativa[0].classList.remove("erro");
+  alternativa[1].classList.remove("erro");
+  alternativa[2].classList.remove("erro");
+  alternativa[3].classList.remove("erro");
+
+  alternativa[0].classList.remove("acerto");
+  alternativa[1].classList.remove("acerto");
+  alternativa[2].classList.remove("acerto");
+  alternativa[3].classList.remove("acerto");
+
+}
+

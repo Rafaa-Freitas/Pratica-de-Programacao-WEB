@@ -28,6 +28,10 @@ header p {
 
 /* Section */
 
+#inicio p {
+  text-align: center;
+}
+
 .quiz {
   clear: both;
   background-color: #fff;
@@ -44,7 +48,7 @@ header p {
   font-size: 1.5em;
   font-weight: 500;
   line-height: 1.5em;
-  margin: 0 100px 0 100px;
+  margin: 20px 100px 20px 100px;
 }
 
 .quiz ul {
@@ -55,6 +59,7 @@ header p {
 }
 
 .quiz ul li {
+  margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
 }
@@ -65,11 +70,12 @@ header p {
 }
 
 /* Botões */
+
 .botoes {
   margin: 10px auto;
 }
 
-button.nxtbtn {
+.nxtbtn {
   margin-left: 100px;
 }
 .botoes button {
@@ -82,19 +88,46 @@ button.nxtbtn {
   cursor: pointer;
 }
 
-.quiz button p {
+.botoes button p {
   margin: 0px;
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
 }
 
+.iniciarbtn {
+  margin-left: 400px;
+  margin-top: 20px;
+}
+
+#result p {
+  text-align: center;
+}
 /* Estilos para JS */
 
 .acerto {
   background-color: #07f0af;
 }
 
+.quiz ul li.acerto:hover {
+  background-color: #07f0af;
+}
+
 .erro {
   background-color: #ff0000;
+}
+
+.quiz ul li.erro:hover {
+  background-color: #ff0000;
+}
+.inativa {
+  display: none;
+}
+
+#perguntaAtualTexto {
+  color: white;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
 }
