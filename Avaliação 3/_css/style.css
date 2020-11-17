@@ -82,6 +82,11 @@ header p {
   background-color: #07f0af;
   border-radius: 5px;
   padding: 10px;
+  border: none;
+}
+
+.botoes button:active{
+  transform: translateY(2px);
 }
 
 .botoes button:hover {

@@ -176,15 +176,15 @@ function verificaResposta(alternativaClicada) {
   // Se a alternativa clicada for igual a resposta da pergunta atual, faça:
   if (alternativaSelecionada === p[perguntaAtual].resposta) {
 
-    alternativa[alternativaSelecionada].classList.toggle("acerto");
+    alternativa[alternativaSelecionada].classList.add("acerto");
     a++;
     acertos = a;
 
   } else {
 
     // INDICE DA ALTERNATIVA = RESPOSTA DA PERGUNTA ATUAL, DENTRO DO ARRAY DE PERGUNTAS.
-    alternativa[p[perguntaAtual].resposta].classList.toggle("acerto");
-    alternativa[alternativaSelecionada].classList.toggle("erro");
+    alternativa[p[perguntaAtual].resposta].classList.add("acerto");
+    alternativa[alternativaSelecionada].classList.add("erro");
   }
   resultado_final.innerText = `Sua pontuação é: ${acertos}/10`
   mensagem_final.innerText = "Obrigado por realizar o QUIZ, caso queira refazê-lo recarregue a página"
